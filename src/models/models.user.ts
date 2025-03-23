@@ -1,5 +1,5 @@
 import { Document, Schema, model, Types } from "mongoose";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 
 interface IUser extends Document {
   //   isModified(arg0: string): unknown;

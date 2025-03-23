@@ -1,4 +1,4 @@
-import bycrypt from "bcrypt";
+import bycrypt from "bcryptjs";
 import { User } from "../models/models.user";
 import { JwtAuthPayload } from "../interfaces/interfaces.auth.jwt";
 import jwt from "jsonwebtoken";
@@ -13,7 +13,6 @@ if (!JWT_SECRET) {
     "JWT_SECRET is not defined. Check your environment variables."
   );
 }
-
 
 class UserServices {
   async register(username: string, email: string, password: string) {
