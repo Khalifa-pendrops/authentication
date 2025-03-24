@@ -16,16 +16,25 @@ const router = express.Router();
 router.use(authenticate as express.RequestHandler);
 
 // Define note routes
-router.post("/", (req, res) => createNote(req as AuthenticatedRequest, res));
-router.get("/", (req, res) => getNotes(req as AuthenticatedRequest, res));
-router.get("/:id", (req, res) => getNote(req as AuthenticatedRequest, res));
-router.put("/:id", (req, res) => updateNote(req as AuthenticatedRequest, res));
-router.delete("/:id", (req, res) =>
+router.post("/", (req: express.Request, res: express.Response) =>
+  createNote(req as AuthenticatedRequest, res)
+);
+router.get("/", (req: express.Request, res: express.Response) =>
+  getNotes(req as AuthenticatedRequest, res)
+);
+router.get("/:id", (req: express.Request, res: express.Response) =>
+  getNote(req as AuthenticatedRequest, res)
+);
+router.put("/:id", (req: express.Request, res: express.Response) =>
+  updateNote(req as AuthenticatedRequest, res)
+);
+router.delete("/:id", (req: express.Request, res: express.Response) =>
   deleteNote(req as AuthenticatedRequest, res)
 );
-router.get("/categories/:categoryId", (req, res) =>
-  getNoteByCategoryId(req as AuthenticatedRequest, res)
+router.get(
+  "/categories/:categoryId",
+  (req: express.Request, res: express.Response) =>
+    getNoteByCategoryId(req as AuthenticatedRequest, res)
 );
 
 export default router;
-
