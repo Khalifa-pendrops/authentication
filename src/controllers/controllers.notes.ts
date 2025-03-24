@@ -35,7 +35,10 @@ export const getNotes = async (req: AuthenticatedRequest, res: Response) => {
   }
 };
 
-export const getNote = async (req: AuthenticatedRequest, res: Response) => {
+export const getNote = async (
+  req: AuthenticatedRequest,
+  res: Response
+): Promise<void> => {
   const { id } = req.params;
 
   try {
@@ -56,7 +59,10 @@ export const getNote = async (req: AuthenticatedRequest, res: Response) => {
   }
 };
 
-export const updateNote = async (req: AuthenticatedRequest, res: Response) => {
+export const updateNote = async (
+  req: AuthenticatedRequest,
+  res: Response
+): Promise<void> => {
   const { id } = req.params;
   const { title, content, categoryId } = req.body;
 
@@ -84,7 +90,10 @@ export const updateNote = async (req: AuthenticatedRequest, res: Response) => {
   }
 };
 
-export const deleteNote = async (req: AuthenticatedRequest, res: Response) => {
+export const deleteNote = async (
+  req: AuthenticatedRequest,
+  res: Response
+): Promise<void> => {
   const { id } = req.params;
 
   try {
