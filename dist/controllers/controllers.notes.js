@@ -48,7 +48,7 @@ const getNote = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const note = yield services_notes_1.default.getNoteById(id, req.user.userId);
         if (!note) {
-            return res.status(404).json({
+            res.status(404).json({
                 success: false,
                 message: "Note not found",
             });
@@ -70,7 +70,7 @@ const updateNote = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     try {
         const updatedNote = yield services_notes_1.default.updateNote(id, title, content, categoryId, req.user.userId);
         if (!updatedNote) {
-            return res.status(404).json({
+            res.status(404).json({
                 success: false,
                 message: "Note not found",
             });
@@ -91,7 +91,7 @@ const deleteNote = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     try {
         const deletedNote = yield services_notes_1.default.deleteNote(id, req.user.userId);
         if (!deletedNote) {
-            return res.status(404).json({
+            res.status(404).json({
                 success: false,
                 message: "Note not found",
             });

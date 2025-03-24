@@ -44,7 +44,7 @@ export const getNote = async (
   try {
     const note = await NoteService.getNoteById(id, req.user.userId);
     if (!note) {
-      return res.status(404).json({
+      res.status(404).json({
         success: false,
         message: "Note not found",
       });
@@ -75,7 +75,7 @@ export const updateNote = async (
       req.user.userId
     );
     if (!updatedNote) {
-      return res.status(404).json({
+      res.status(404).json({
         success: false,
         message: "Note not found",
       });
@@ -99,7 +99,7 @@ export const deleteNote = async (
   try {
     const deletedNote = await NoteService.deleteNote(id, req.user.userId);
     if (!deletedNote) {
-      return res.status(404).json({
+      res.status(404).json({
         success: false,
         message: "Note not found",
       });

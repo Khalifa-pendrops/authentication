@@ -28,3 +28,4 @@ router.get("/categories/:categoryId", (req, res) =>
 );
 
 export default router;
+

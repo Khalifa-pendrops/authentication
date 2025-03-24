@@ -12,9 +12,8 @@ router.use(validateRequest_1.authenticate);
 // Define note routes
 router.post("/", (req, res) => (0, controllers_notes_1.createNote)(req, res));
 router.get("/", (req, res) => (0, controllers_notes_1.getNotes)(req, res));
-// Uncomment and implement these routes as needed
-// router.get("/:id", NoteController.getNoteById);
-// router.put("/:id", NoteController.updateNote);
-// router.delete("/:id", NoteController.deleteNote);
-// router.get("/categories/:categoryId", NoteController.getNotesByCategoryId);
+router.get("/:id", (req, res) => (0, controllers_notes_1.getNote)(req, res));
+router.put("/:id", (req, res) => (0, controllers_notes_1.updateNote)(req, res));
+router.delete("/:id", (req, res) => (0, controllers_notes_1.deleteNote)(req, res));
+router.get("/categories/:categoryId", (req, res) => (0, controllers_notes_1.getNoteByCategoryId)(req, res));
 exports.default = router;
